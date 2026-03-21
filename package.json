@@ -1,0 +1,9 @@
+{
+  "name": "qmart-apps",
+  "scripts": {
+    "dev": "concurrently \"cd qmart-landing && npm run dev\" \"cd qmart-store && npm run dev -- -p 3001\" \"cd qmart-customer && npm run dev -- -p 3002\" \"cd qmart-admin && npm run dev -- -p 3003\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}

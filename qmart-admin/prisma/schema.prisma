@@ -1,0 +1,70 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      String   @default("CUSTOMER")
+  phone     String?
+  store     String?
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  orders    Order[]
+}
+
+model Category {
+  id        String    @id @default(cuid())
+  name      String    @unique
+  products  Product[]
+  createdAt DateTime  @default(now())
+}
+
+model Product {
+  id         String      @id @default(cuid())
+  name       String
+  price      Float
+  unit       String
+  emoji      String
+  fpo        String?
+  qty        Int         @default(0)
+  threshold  Int         @default(10)
+  enabled    Boolean     @default(true)
+  organic    Boolean     @default(false)
+  categoryId String
+  category   Category    @relation(fields: [categoryId], references: [id])
+  orderItems OrderItem[]
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+}
+
+model Order {
+  id           String      @id @default(cuid())
+  customerId   String
+  customer     User        @relation(fields: [customerId], references: [id])
+  customerAddr String
+  total        Float
+  status       String      @default("pending")
+  tokens       Int         @default(0)
+  items        OrderItem[]
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+}
+
+model OrderItem {
+  id        String  @id @default(cuid())
+  orderId   String
+  order     Order   @relation(fields: [orderId], references: [id])
+  productId String
+  product   Product @relation(fields: [productId], references: [id])
+  qty       Int
+  price     Float
+}

@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:"Inter",system-ui,sans-serif;background:#F5F5F5;max-width:430px;margin:0 auto;min-height:100vh}
+input,select,textarea,button{font-family:inherit}
+input:focus,select:focus,textarea:focus{outline:none}
+@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@keyframes su{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pu{0%,100%{opacity:1}50%{opacity:.25}}
+.fi{animation:fi .22s ease-out}
+.su{animation:su .28s ease-out}
+.pu{animation:pu 1.5s ease-in-out infinite}
