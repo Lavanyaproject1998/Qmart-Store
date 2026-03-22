@@ -57,7 +57,7 @@ export default function AdminLogin() {
             style={{ width: '100%', background: 'white', border: '1px solid #FDE68A', borderRadius: 9, padding: '8px 10px', display: 'flex', alignItems: 'center', gap: 9, cursor: 'pointer' }}>
             <span style={{ fontSize: 18 }}>⚙️</span>
             <div style={{ textAlign: 'left', flex: 1 }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: '#92400E' }}>Meera Nair</div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: '#92400E' }}>Likhitha</div>
               <div style={{ fontSize: 10, color: '#757575' }}>admin@qmart.in · qmart123</div>
             </div>
             <span style={{ fontSize: 10, background: '#F0F0F0', color: '#9E9E9E', borderRadius: 18, padding: '2px 7px' }}>Fill</span>

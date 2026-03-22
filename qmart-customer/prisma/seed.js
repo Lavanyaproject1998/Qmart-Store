@@ -7,8 +7,8 @@ async function main() {
   const pw = await bcrypt.hash('qmart123', 12);
 
   await prisma.user.upsert({ where: { email: 'customer@qmart.in' }, update: {}, create: { name: 'Priya Sharma', email: 'customer@qmart.in', password: pw, role: 'CUSTOMER', phone: '9876543210' } });
-  await prisma.user.upsert({ where: { email: 'store@qmart.in'    }, update: {}, create: { name: 'Arun Kumar',   email: 'store@qmart.in',    password: pw, role: 'DARKSTORE', store: 'Indiranagar Dark Store' } });
-  await prisma.user.upsert({ where: { email: 'admin@qmart.in'    }, update: {}, create: { name: 'Meera Nair',   email: 'admin@qmart.in',    password: pw, role: 'ADMIN' } });
+  await prisma.user.upsert({ where: { email: 'store@qmart.in'    }, update: {}, create: { name: 'lavanya',   email: 'store@qmart.in',    password: pw, role: 'DARKSTORE', store: 'Indiranagar Dark Store' } });
+  await prisma.user.upsert({ where: { email: 'admin@qmart.in'    }, update: {}, create: { name: 'Likhitha',   email: 'admin@qmart.in',    password: pw, role: 'ADMIN' } });
 
   const cats = ['Fruits', 'Vegetables', 'Dairy', 'FMCG', 'Grains', 'Snacks'];
   const catMap = {};
